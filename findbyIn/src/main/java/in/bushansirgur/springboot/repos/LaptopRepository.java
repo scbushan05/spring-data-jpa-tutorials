@@ -11,8 +11,8 @@ import in.bushansirgur.springboot.entity.Laptop;
 @Repository
 public interface LaptopRepository extends JpaRepository<Laptop, Long> {
 	
+	
 	List<Laptop> findByNameIn(List<String> names);
 	
 	List<Laptop> findByPriceIn(List<BigDecimal> prices);
-	
 }

@@ -19,14 +19,13 @@ public class LaptopController {
 	@Autowired
 	LaptopRepository lRepo;
 	
-	@GetMapping("/laptops/namein")
-	public ResponseEntity<List<Laptop>> getLaptopsByNameIn() {
-		return new ResponseEntity<List<Laptop>>(lRepo.findByNameIn(Arrays.asList("hp", "lenovo")), HttpStatus.OK);
+	@GetMapping("/laptops/names")
+	public ResponseEntity<List<Laptop>> getLaptopsByNames () {
+		return new ResponseEntity<>(lRepo.findByNameIn(Arrays.asList("HP", "Lenovo")), HttpStatus.OK);
 	}
 	
-	@GetMapping("/laptops/pricein")
-	public ResponseEntity<List<Laptop>> getLaptopsByPriceIn() {
-		return new ResponseEntity<List<Laptop>>(
-				lRepo.findByPriceIn(Arrays.asList(new BigDecimal(50000.00), new BigDecimal(85000.00))), HttpStatus.OK);
+	@GetMapping("/laptops/prices")
+	public ResponseEntity<List<Laptop>> getLaptopsByPrices () {
+		return new ResponseEntity<>(lRepo.findByPriceIn(Arrays.asList(new BigDecimal(50000.00), new BigDecimal(60000))), HttpStatus.OK);
 	}
 }

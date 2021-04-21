@@ -15,7 +15,7 @@ import in.bushansirgur.springboot.repos.LaptopRepository;
 
 @RestController
 public class LaptopController {
-	
+		
 	@Autowired
 	LaptopRepository lRepo;
 	
@@ -29,3 +29,12 @@ public class LaptopController {
 		return new ResponseEntity<List<Laptop>>(lRepo.findByPriceLessThan(price), HttpStatus.OK);
 	}
 }
+
+
+
+
+
+
+
+
+

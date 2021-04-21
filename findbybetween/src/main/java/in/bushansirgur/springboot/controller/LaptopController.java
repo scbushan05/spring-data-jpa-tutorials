@@ -20,15 +20,15 @@ public class LaptopController {
 	@Autowired
 	LaptopRepository lRepo;
 	
-	@GetMapping("/laptops/createdat")
-	public ResponseEntity<List<Laptop>> getLaptopsByCreatedDate (@RequestParam Date startDate,
-																@RequestParam Date endDate) {
-		return new ResponseEntity<List<Laptop>>(lRepo.findByCreatedAtBetween(startDate, endDate), HttpStatus.OK);
+	@GetMapping("/laptops/price")
+	public ResponseEntity<List<Laptop>> getLaptopsByPrice (@RequestParam BigDecimal start, @RequestParam BigDecimal end) {
+		return new ResponseEntity<List<Laptop>>(lRepo.findByPriceBetween(start, end), HttpStatus.OK);
 	}
 	
-	@GetMapping("/laptops/price")
-	public ResponseEntity<List<Laptop>> getLaptopsByPrice (@RequestParam BigDecimal startPrice,
-																@RequestParam BigDecimal endPrice) {
-		return new ResponseEntity<List<Laptop>>(lRepo.findByPriceBetween(startPrice, endPrice), HttpStatus.OK);	
+	@GetMapping("/laptops/date")
+	public ResponseEntity<List<Laptop>> getLaptopsByDate (@RequestParam Date start, @RequestParam Date end) {
+		return new ResponseEntity<List<Laptop>>(lRepo.findByCreatedAtBetween(start, end), HttpStatus.OK);
 	}
+	
+	
 }

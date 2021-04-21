@@ -10,9 +10,8 @@ import in.bushansirgur.springboot.entity.Laptop;
 
 @Repository
 public interface LaptopRepository extends JpaRepository<Laptop, Long> {
-	
+
 	List<Laptop> findByPriceGreaterThan(BigDecimal price);
 	
 	List<Laptop> findByPriceLessThan(BigDecimal price);
-	
 }

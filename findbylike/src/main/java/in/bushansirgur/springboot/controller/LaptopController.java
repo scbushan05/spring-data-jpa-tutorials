@@ -18,13 +18,14 @@ public class LaptopController {
 	@Autowired
 	LaptopRepository lRepo;
 	
-	@GetMapping("/laptops/namelike")
-	public ResponseEntity<List<Laptop>> getLaptopsByNameLike(@RequestParam String name) {
+	@GetMapping("/laptops/name")
+	public ResponseEntity<List<Laptop>> getLaptopsByName (@RequestParam String name) {
 		return new ResponseEntity<List<Laptop>>(lRepo.findByNameLike("%"+name+"%"), HttpStatus.OK);
 	}
 	
-	@GetMapping("/laptops/brandlike")
-	public ResponseEntity<List<Laptop>> getLaptopsByBrandLike(@RequestParam String brand) {
+	@GetMapping("/laptops/brand")
+	public ResponseEntity<List<Laptop>> getLaptopsByBrand (@RequestParam String brand) {
 		return new ResponseEntity<List<Laptop>>(lRepo.findByBrandLike("%"+brand+"%"), HttpStatus.OK);
 	}
+	
 }
